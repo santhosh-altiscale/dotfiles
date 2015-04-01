@@ -1,0 +1,11 @@
+escape ^Tt # Instead of Control-a, make the escape/command character be Control-b
+hardstatus alwayslastline
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+hardstatus string '%{= kG}%-Lw%{= KW}%50>%n%f* %t%{= kG}%+Lw%< %{= kG}%-=%D %d %M %Y %c'
+bindkey "^[k" eval "copy" "stuff ^b" # enter copy mode and move up one page
+bindkey "^k" eval "copy" "stuff k" # enter copy mode and move up one line
+bindkey -m "^[k" stuff ^b # move up one page
+bindkey -m "^k" stuff k # move up one line
+defscrollback 5000
+startup_message off
+hardstatus string "%{= bw} %{= bc}[%{-}%0c%{= bc}]%{-} [%-Lw%{= bW}%{+b}%50>%n%f* %t%{-b}%{= bw}%+Lw]%<"
